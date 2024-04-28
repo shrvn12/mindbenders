@@ -6,17 +6,21 @@
   </head>
   <body>
     <section class="sub-header">
-        <nav>
-          <div id="navbar">
-            <ul>
-              <li><a href="project2.html">HOME</a></li>
-              <li><a href="aboutus.html">ABOUT US</a></li>
-              <li><a href="course.html">COURSES</a></li>
-              <li><a href="blog.html">BLOG</a></li>
-              <li><a href="contact.html">CONTACT US</a></li>
-            </ul>
-          </div>
-        </nav>
+       <div id="navbar">
+        <div>
+          {{#if user}}
+          <p>Wlecome {{user.name}}</p>
+          {{/if}}
+        </div>
+        <ul>
+          <li><a href="{{ auth_url }}">{{ auth }}</a></li>
+          <li><a href="/">HOME</a></li>
+          <li><a>ABOUT US</a></li>
+          <li><a href="/course">COURSE</a></li>
+          <li><a href="/blog">BLOG</a></li>
+          <li><a href="/contact">CONTACT US</a></li>
+        </ul>
+      </div>
         <h1>COURSE</h1>
       </section>
       <section class="course">

@@ -8,23 +8,21 @@
   </head>
   <body>
     <section class="header">
-      {{!-- <nav> --}}
-        <div id="navbar">
-          <div>
-            {{#if user}}
-            <p>Wlecome {{user.name}}</p>
-            {{/if}}
-          </div>
-          <ul>
-            <li><a href="{{ auth_url }}">{{ auth }}</a></li>
-            <li><a href="./index.html">HOME</a></li>
-            <li><a href="./about.html">ABOUT US</a></li>
-            <li><a href="./course.html">COURSE</a></li>
-            <li><a href="./blog.html">BLOG</a></li>
-            <li><a href="./contact.html">CONTACT US</a></li>
-          </ul>
+      <div id="navbar">
+        <div>
+          {{#if user}}
+          <p>Wlecome {{user.name}}</p>
+          {{/if}}
         </div>
-      {{!-- </nav> --}}
+        <ul>
+          <li><a href="{{ auth_url }}">{{ auth }}</a></li>
+          <li><a href="/">HOME</a></li>
+          <li><a>ABOUT US</a></li>
+          <li><a href="/course">COURSE</a></li>
+          <li><a href="/blog">BLOG</a></li>
+          <li><a href="/contact">CONTACT US</a></li>
+        </ul>
+      </div>
       <div class="text-box">
         <h1>FIND NGO</h1>
         <p>
