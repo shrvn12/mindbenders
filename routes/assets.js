@@ -8,6 +8,11 @@ router.get("/loginBg", function (req, res, next) {
   res.sendFile(imagePath);
 });
 
+router.get("/location", function(req, res) {
+  const imagePath = path.join(__dirname, "../public/images/location.png");
+  res.sendFile(imagePath);
+})
+
 router.get("/loginScript", function (req, res) {
   const scriptpath = path.join(__dirname, "../views/scripts/login.js");
   res.sendFile(scriptpath);
