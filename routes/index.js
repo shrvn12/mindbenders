@@ -17,7 +17,7 @@ router.get("/", function (req, res, next) {
   jwt.verify(token, process.env.USER_TOKEN_KEY, (err, decoded) => {
     if (err) {
       console.log(err);
-      return res.render("index", { title: "Express" });
+      return res.render("index", { title: "Find NGO" });
     } else {
       console.log(decoded);
       if (decoded && decoded.name) {
