@@ -8,7 +8,7 @@ router.get("/", function (req, res, next) {
 
   if (!token) {
     return res.render("index", {
-      title: "Find NGO",
+      title: "Find NGO: Connecting volunteers & NGO",
       auth: "Login",
       auth_url: "/login",
     });
@@ -17,19 +17,19 @@ router.get("/", function (req, res, next) {
   jwt.verify(token, process.env.USER_TOKEN_KEY, (err, decoded) => {
     if (err) {
       console.log(err);
-      return res.render("index", { title: "Find NGO" });
+      return res.render("index", { title: "Find NGO: Connecting volunteers & NGO" });
     } else {
       console.log(decoded);
       if (decoded && decoded.name) {
         res.render("index", {
-          title: "Find NGO",
+          title: "Find NGO: Connecting volunteers & NGO",
           auth: "Logout",
           auth_url: "/logout",
           user: decoded,
         });
       } else {
         res.render("index", {
-          title: "Find NGO",
+          title: "Find NGO: Connecting volunteers & NGO",
           auth: "Logout",
           auth_url: "/logout",
         });
@@ -39,27 +39,24 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/login", function (req, res) {
-  res.render("login");
+  res.render("login", {title: "Login: Find NGO"});
 });
 
 router.get("/logout", function (req, res) {
   res.clearCookie("token");
-  return res.render("index", {
-    title: "Find NGO",
-    auth: "Login",
-    auth_url: "/login",
-  });
+  return res.redirect('/');
+  // return res.render("index", {
+  //   title: "Find NGO: Connecting volunteers & NGO",
+  //   auth: "Login",
+  //   auth_url: "/login",
+  // });
 });
 
 router.get("/course", (req, res) => {
   const token = req.cookies.token;
 
   if (!token) {
-    return res.render("index", {
-      title: "Find NGO",
-      auth: "Login",
-      auth_url: "/login",
-    });
+    return res.render("login");
   }
 
   jwt.verify(token, process.env.USER_TOKEN_KEY, (err, decoded) => {
@@ -90,11 +87,7 @@ router.get("/contact", (req, res) => {
   const token = req.cookies.token;
 
   if (!token) {
-    return res.render("index", {
-      title: "Find NGO",
-      auth: "Login",
-      auth_url: "/login",
-    });
+    return res.render("login");
   }
 
   jwt.verify(token, process.env.USER_TOKEN_KEY, (err, decoded) => {
@@ -125,11 +118,7 @@ router.get("/about", (req, res) => {
   const token = req.cookies.token;
 
   if (!token) {
-    return res.render("index", {
-      title: "Find NGO",
-      auth: "Login",
-      auth_url: "/login",
-    });
+    return res.render("login");
   }
 
   jwt.verify(token, process.env.USER_TOKEN_KEY, (err, decoded) => {

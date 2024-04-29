@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Slide Navbar</title>
+    <title>Login</title>
     <link rel="stylesheet" type="text/css" href="slide navbar style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet" />
 </head>
@@ -15,6 +15,9 @@
         min-height: 100vh;
         font-family: 'Jost', sans-serif;
         background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+        background-image: url(https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+        background-position: center;
+        background-size: cover;
         position: relative;
     }
 
@@ -117,7 +120,7 @@
 
     .notification {
         position: absolute;
-        top: 5%;
+        top: 10%;
         z-index: 1;
         text-align: center;
         color: white;
@@ -126,19 +129,39 @@
     }
 
     .notification>p{
-        color: white;
+        color: violet;
+        width: 100%;
+        text-align: center;
+        text-transform: capitalize;
+        font-weight: bold;
     }
 
     .loader {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: none;
-  border-top: 3px solid #FFF;
-  border-right: 3px solid transparent;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-}
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: none;
+        border-top: 3px solid #FFF;
+        border-right: 3px solid transparent;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+    }
+
+    .name{
+        position: absolute;
+        top: 5%;
+        z-index: 1;
+        text-align: center;
+        color: white;
+        display: block;
+        height: min-content;
+    }
+
+    .name>p{
+        width: 100%;
+        text-align: center;
+        color: white;
+    }
 
 @keyframes rotation {
   0% {
@@ -154,6 +177,9 @@
     <div class="notification">
         <span id="loader" class="loader"></span>
         <p id="message"></p>
+    </div>
+    <div class="name">
+        <p>Find NGO</p>
     </div>
     <div class="main">
         <input type="checkbox" id="chk" aria-hidden="true" />

@@ -22,4 +22,8 @@ router.get("/login", function (req, res) {
   res.render("login");
 });
 
+router.get("/favicon", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/favicon.ico"));
+})
+
 module.exports = router;
