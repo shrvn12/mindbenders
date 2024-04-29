@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <script src="https://kit.fontawesome.com/327f15e714.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="project2.css" />
+    <title>SPORTS CLUB</title>
+  </head>
+  <body>
+    <section class="header">
+      <div id="navbar">
+        <div>
+          {{#if user}}
+          <p>Wlecome {{user.name}}</p>
+          {{/if}}
+        </div>
+        <ul>
+          <li><a href="{{ auth_url }}">{{ auth }}</a></li>
+          <li><a href="/">HOME</a></li>
+          <li><a>ABOUT US</a></li>
+          <li><a href="/course">COURSE</a></li>
+          <li><a href="/blog">BLOG</a></li>
+          <li><a href="/contact">CONTACT US</a></li>
+        </ul>
+      </div>
+      <div class="text-box">
+        <h1>CONTACT US</h1>
+        <p>This is one of the best coaching class in the whole Earth</p>
+      </div>
+    </section>
+
+ <section class="location">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.619387370669!2d77.2874013150222!3d28.611192982426225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x51dccf2d718cbe6e!2zMjjCsDM2JzQwLjMiTiA3N8KwMTcnMjIuNSJF!5e0!3m2!1sen!2sin!4v1661078996863!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+ </section>
+ <section class="contact-us">
+    <div class="row">
+        <div class="contact-col">
+            <div>
+                <i class="fa fa-home"></i>
+                <span>
+                    <h5>Patpar Ganj, Mayur Vihar </h5>
+                    <p>delhi ,India</p>
+                </span>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <span>
+                    <h5>+91 9868909640 </h5>
+                    <p>Monday to Saturday 10am-5pm</p>
+                </span>
+            </div>
+            <div>
+                <i class="fa fa-envelope-o"></i>
+                <span>
+                    <h5>aryanmamania17@gmail.com </h5>
+                    <p>email us your query</p>
+    
+                </span>
+            </div>
+            
+    
+
+        </div>
+     <div class="contact-col">
+        <form action="">
+            <input type="text" placeholder="Enter your name" required>
+            <input type="email" placeholder="Enter your email address" required>
+            <input type="text" placeholder="Enter your subject" required>
+            <textarea rows="8" placeholder="Message" required></textarea>
+        </form>
+        <a href="" class="hero-btn  red-btn">SEND MESSAGE</a>
+     </div>
+ </section>
+
+ <section class="footer">
+  <h4>About us</h4>
+  <p>Our wisdom coaching center always tries to stay on top and for that it provides whatever all they can . For us <br>
+  all students are same and our main priority is to maximize knowledge of each and every studnet .<br>Feel free to contact us from links given below. Hope to see you soon</p>
+   <div class="icons">
+    <i class="fa fa-facebook"></i>
+    <i class="fa fa-instagram"></i>
+    <i class="fa-brands fa-discord"></i>
+    <i class="fa-brands fa-linkedin-in"></i>
+    </div>
+<p>Made by Aryan Mamania</p>
+</section>
+</body>
+</html>
+
