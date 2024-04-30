@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <script src="https://kit.fontawesome.com/327f15e714.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../public/stylesheets/style.css" />
+    <title>Find NGO</title>
+  </head>
+  <style>
+
+    .education{
+      padding: 2%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      gap: 2%;
+    }
+    .education>a>div{
+      /* border: 1px solid; */
+      width: 100%;
+      height: 50vh;
+      border-radius: 20px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      cursor: pointer;
+    }
+
+    .education>a>div>div:nth-child(1){
+      height: 65%;
+      /* border: 1px solid; */
+      overflow: hidden;
+    }
+
+    .education img{
+      width: 100%;
+      border-radius: 10px 10px 0px 0px;
+    }
+
+    .education>a>div>div:nth-child(2){
+      height: 35%;
+      /* border: 1px solid; */
+      margin-top: 1%;
+    }
+
+    .education p{
+      font-size: medium;
+      padding: 1%;
+      margin-left: 2%;
+    }
+
+    .bold{
+      font-weight: bold;
+    }
+
+    .light{
+      font-weight: lighter;
+      color: grey;
+    }
+  </style>
+  <body>
+    <section class="sub-header">
+         <div id="navbar">
+        <div>
+          <img src="/assets/favicon" alt="">
+          {{#if user}}
+          <p>Welcome {{user.name}}</p>
+          {{/if}}
+        </div>
+        <ul>
+          <li><a href="{{ auth_url }}">{{ auth }}</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+        </ul>
+      </div>
+        <h1>All Registered NGO's</h1>
+      </section>
+      <section class= "education">
+        {{#each ngo}}
+        <a href="{{this.WEBSITE}}" target="_blank">
+          <div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        </div>
+        <div>
+            <p class="bold"> {{this.NGO}}   </p>
+            <p class="light">  {{this.BASIS}} </p>
+            {{!-- <p class="light">  {{this.contact}} </p> --}}
+            <p class="bold">{{this.LOCATION}}</p>
+        </div>
+      </div>
+        </a>
+      {{/each}}
+    </section>
+
+
+  
+    <!----Footer---->
+    {{!-- <section class="footer">
+    
+       <div class="icons">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa-brands fa-discord"></i>
+        <i class="fa-brands fa-linkedin-in"></i>
+        </div>
+    <p>Made by INNOVETORS</p> --}}
+    </section>
+    </body>
+    </html>
+    

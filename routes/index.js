@@ -1,6 +1,7 @@
 var express = require("express");
 const jwt = require("jsonwebtoken");
 var router = express.Router();
+const ngo = require('../views/ngo.json');
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -138,6 +139,37 @@ router.get("/about", (req, res) => {
           title: "Find NGO",
           auth: "Logout",
           auth_url: "/logout",
+        });
+      }
+    }
+  });
+})
+
+router.get("/all", (req, res) => {
+  const token = req.cookies.token;
+  if (!token) {
+    return res.render("login");
+  }
+
+  jwt.verify(token, process.env.USER_TOKEN_KEY, (err, decoded) => {
+    if (err) {
+      console.log(err);
+      return res.render("index", { title: "Find NGO: Connecting volunteers & NGO" });
+    } else {
+      if (decoded && decoded.name) {
+        res.render("education", {
+          title: "Find NGO: Education",
+          auth: "Logout",
+          auth_url: "/logout",
+          user: decoded,
+          ngo,
+        });
+      } else {
+        res.render("education", {
+          title: "Find NGO: education",
+          auth: "Login",
+          auth_url: "/login",
+          ngo: ['qwertyuiop'],
         });
       }
     }

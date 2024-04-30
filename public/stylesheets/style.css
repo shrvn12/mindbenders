@@ -412,6 +412,12 @@ h3 {
   padding: 35px 0 25px;
   font-size: 20px;
 }
+
+.about-col img{
+  width: auto;
+  display: block;
+  margin: auto;
+}
 .red-btn{
   border: 1px solid #f44336;
   background: transparent;
